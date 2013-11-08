@@ -3,13 +3,19 @@
 
 import os
 import sys
-
 import leads
 
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
+
+
+def parse_requirements(requirements):
+    with open(requirements) as f:
+        return [l.strip('\n') for l in f if l.strip('\n') and not l.startswith('#')]
+
+install_reqs = parse_requirements(os.path.abspath(os.path.join(os.path.dirname(__file__), 'requirements.txt')))
 
 version = leads.__version__
 
@@ -35,8 +41,7 @@ setup(
         'leads',
     ],
     include_package_data=True,
-    install_requires=[
-    ],
+    install_requires=install_reqs,
     license="BSD",
     zip_safe=False,
     keywords='django-leads',

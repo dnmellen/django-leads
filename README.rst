@@ -22,15 +22,43 @@ The full documentation is at http://django-leads.rtfd.org.
 Quickstart
 ----------
 
-Install django-leads::
+Install django-leads
+++++++++++++++++++++++
 
-    pip install django-leads
+.. code-block :: bash
 
-Then use it in a project::
+    pip install django-leads  # Also auto installs all needed dependencies! :)
 
-	import django-leads
+Settings
+++++++++++++++++++++++
+
+.. code-block :: python
+
+    INSTALLED_APPS = (
+        ...
+        'floppyforms',
+        'crispy_forms',
+        'leads',
+    )
+    ...
+    CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+urls.py
+++++++++++++++++++++++
+
+.. code-block :: python
+
+    ...
+    import leads.urls
+
+    urlpatterns = patterns('',
+        ...
+        url(r'^admin/', include(admin.site.urls)),
+        url(r'^', include(leads.urls)),
+    )
+
 
 Features
 --------
 
-* TODO
+* Basic lead page to act as a placeholder for your django project
