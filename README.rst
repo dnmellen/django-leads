@@ -27,7 +27,7 @@ Install django-leads
 
 .. code-block :: bash
 
-    pip install django-leads  # Also auto installs all needed dependencies! :)
+    $ pip install django-leads  # Also auto installs all needed dependencies! :)
 
 Settings
 ++++++++++++++++++++++
@@ -57,8 +57,18 @@ urls.py
         url(r'^', include(leads.urls, namespace='leads')),
     )
 
+Final touch
+++++++++++++++++++++++
+
+.. code-block :: bash
+
+    $ python manage.py syncdb
+
 
 Features
 --------
 
 * Basic lead page to act as a placeholder for your django project
+* Registers user's name and email into database
+* Customizable and extendable models and forms
+* Admin interface
