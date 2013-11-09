@@ -8,6 +8,9 @@ django-leads
 .. image:: https://travis-ci.org/dnmellen/django-leads.png?branch=master
         :target: https://travis-ci.org/dnmellen/django-leads
 
+.. image:: https://coveralls.io/repos/dnmellen/django-leads/badge.png
+        :target: https://coveralls.io/r/dnmellen/django-leads
+
 .. image:: https://pypip.in/d/django-leads/badge.png
         :target: https://crate.io/packages/django-leads?version=latest
 
