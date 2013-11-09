@@ -12,13 +12,16 @@ try:
                 "ENGINE": "django.db.backends.sqlite3",
             }
         },
-        ROOT_URLCONF="leads.urls",
+        ROOT_URLCONF="tests.urls",
         INSTALLED_APPS=[
             "django.contrib.auth",
             "django.contrib.contenttypes",
             "django.contrib.sites",
+            "floppyforms",
+            "crispy_forms",
             "leads",
         ],
+        CRISPY_TEMPLATE_PACK='bootstrap3',
         SITE_ID=1,
         NOSE_ARGS=['-s'],
     )

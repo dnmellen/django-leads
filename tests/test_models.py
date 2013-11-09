@@ -1,27 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""
-test_django-leads
-------------
+from django.test import TestCase
 
-Tests for `django-leads` modules module.
-"""
-
-import os
-import shutil
-import unittest
-
-from leads import models
+from leads.models import Register
 
 
-class TestLeads(unittest.TestCase):
+class TestRegisterModel(TestCase):
 
     def setUp(self):
-        pass
+        self.obj = Register.objects.create(name='john', email='john@domain.com')
 
-    def test_something(self):
-        pass
-
-    def tearDown(self):
-        pass
+    def test_str(self):
+        self.assertEqual(str(self.obj), 'john@domain.com')
