@@ -32,6 +32,12 @@ Install django-leads
 
     $ pip install django-leads  # Also auto installs all needed dependencies! :)
 
+Or get the bleeding-edge version:
+
+.. code-block :: bash
+
+    $ pip install https://github.com/dnmellen/django-leads/master
+
 Settings
 ++++++++++++++++++++++
 
