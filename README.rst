@@ -71,6 +71,7 @@ Final touch
 Features
 --------
 
+* Works on Python 2.6, 2.7, 3.3
 * Basic lead page to act as a placeholder for your django project
 * Registers user's name and email into database
 * Customizable and extendable models and forms
