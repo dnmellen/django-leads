@@ -7,3 +7,8 @@ History
 ++++++++++++++++++
 
 * First release on PyPI.
+
+0.1.1 (2013-11-10)
+++++++++++++++++++
+
+* Makes this app more extendable by using custom models and forms
