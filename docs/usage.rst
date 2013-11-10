@@ -101,6 +101,7 @@ Advanced settings
  Setting name                   Explanation
 =============================== ======================================================
  ``LEADS_REGISTER_MODEL``       Define a custom Model to save data
+ ``LEADS_REGISTER_MODEL_ADMIN`` Define a custom ModelAdmin class
  ``LEADS_REGISER_FORM_CLASS``   Define a custom FormModel to represent the form
  ``LEADS_REGISTER_FORM_FIELDS`` Specify the fields that will be shown in the form
 =============================== ======================================================

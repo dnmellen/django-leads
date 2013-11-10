@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
-from django.conf import settings
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from django.utils.translation import ugettext_lazy as _
 
 import floppyforms as forms
-
-from .models import Register
+from . import get_register_model, get_register_form_fields
 
 
 class RegisterForm(forms.ModelForm):
@@ -21,5 +19,5 @@ class RegisterForm(forms.ModelForm):
         super(RegisterForm, self).__init__(*args, **kwargs)
 
     class Meta:
-        model = getattr(settings, 'LEADS_REGISTER_MODEL', Register)
-        fields = getattr(settings, 'LEADS_REGISTER_FORM_FIELDS', ('name', 'email'))
+        model = get_register_model()
+        fields = get_register_form_fields()

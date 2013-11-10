@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Register
+from . import get_register_model, get_register_model_admin
 
 
 class RegisterAdmin(admin.ModelAdmin):
@@ -9,4 +9,4 @@ class RegisterAdmin(admin.ModelAdmin):
     list_filter = ['created_on']
     search_fields = ['name', 'email']
 
-admin.site.register(Register, RegisterAdmin)
+admin.site.register(get_register_model(), get_register_model_admin())

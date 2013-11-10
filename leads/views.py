@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.core.urlresolvers import reverse
-from django.conf import settings
 from django.views.generic import CreateView, TemplateView
-
-from .models import Register
-from .forms import RegisterForm
+from . import get_register_model, get_register_form_class
 
 
 class IndexView(CreateView):
@@ -12,8 +9,8 @@ class IndexView(CreateView):
     This view renders the main page
     """
     template_name = 'leads/index.html'
-    model = getattr(settings, 'LEADS_REGISTER_MODEL', Register)
-    form_class = getattr(settings, 'LEADS_REGISER_FORM_CLASS', RegisterForm)
+    model = get_register_model()
+    form_class = get_register_form_class()
 
     def get_success_url(self):
         return reverse('leads:thanks_register')
