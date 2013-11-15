@@ -8,7 +8,6 @@ test_django-leads
 Tests for `django-leads` admin module.
 """
 
-import csv
 from django.test import TestCase
 from django.test.client import RequestFactory
 from leads.models import Register
@@ -25,8 +24,7 @@ class TestRegisterAdmin(TestCase):
         Register.objects.create(name='bob', email='bob@domain.com')
 
     def test_export_to_csv(self):
-        expected_result = [[],
-                           ['email', 'name'],
+        expected_result = [['email', 'name'],
                            ['john@domain.com', 'john'],
                            ['alice@domain.com', 'alice'],
                            ['bob@domain.com', 'bob']]
@@ -34,4 +32,5 @@ class TestRegisterAdmin(TestCase):
         queryset = Register.objects.all()
         response = self.register_admin.export_to_csv(request, queryset)
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(expected_result, [r[:2] for r in csv.reader(response)])
+        csv_response = [l.decode('utf-8').split(',')[:2] for l in response.content.splitlines()]
+        self.assertEqual(expected_result, csv_response)
