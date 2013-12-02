@@ -37,7 +37,7 @@ class Newsletter(models.Model):
     from_name = models.CharField(_('From name'), max_length=50)
     from_address = models.EmailField(_('From address'))
     subject = models.CharField(_('Subject'), max_length=255)
-    html_file = models.FileField(_('HTML file'))
+    html_file = models.FileField(_('HTML file'), upload_to='newsletters')
     created_on = models.DateTimeField(_('Created on'), auto_now_add=True)
     modified_on = models.DateTimeField(_('Modified on'), auto_now=True)
 
