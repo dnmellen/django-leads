@@ -37,7 +37,7 @@ admin.site.register(get_register_model(), get_register_model_admin())
 class NewsletterAdmin(admin.ModelAdmin):
     fields = ['subject', 'from_name', 'from_address', 'html_file']
     readonly_fields = ('created_on', 'modified_on')
-    list_display = ('created_on')
+    list_display = ('created_on',)
     list_filter = ['created_on']
     search_fields = ['subject']
     actions = ['send']
@@ -59,7 +59,7 @@ class NewsletterAdmin(admin.ModelAdmin):
                 msg.to = obj.email
                 yield msg
 
-        connection.send_messages(get_emails())
+        return connection.send_messages(get_emails())
 
     send.short_description = "Send newsletter to all registered users"
 
