@@ -46,20 +46,24 @@ class NewsletterAdmin(admin.ModelAdmin):
         """
         Action to send the current newsletter to all registered users
         """
+        num_sent_emails = 0
         connection = get_connection()
-        body = self.html_file.read()
-        msg = EmailMultiAlternatives(subject=self.subject,
-                                     body='',
-                                     from_email=u"{from_name} <{from_email}>".format(from_name=self.from_name,
-                                                                                     from_email=self.from_address))
-        msg.attach_alternative(body, "text/html")
 
-        def get_emails():
+        for obj in queryset:
+            messages = []
+            body = obj.html_file.read()
+            msg = EmailMultiAlternatives(subject=obj.subject,
+                                         body='',
+                                         from_email=u"{from_name} <{from_email}>".format(from_name=obj.from_name,
+                                                                                         from_email=obj.from_address))
+            msg.attach_alternative(body, "text/html")
             for obj in get_register_model().objects.all():
                 msg.to = obj.email
-                yield msg
+                messages.append(msg)
 
-        return connection.send_messages(get_emails())
+            num_sent_emails += connection.send_messages(messages)
+
+        return num_sent_emails
 
     send.short_description = "Send newsletter to all registered users"
 
