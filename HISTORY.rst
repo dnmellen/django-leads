@@ -12,3 +12,10 @@ History
 ++++++++++++++++++
 
 * Makes this app more extendable by using custom models and forms
+
+0.1.2 (2013-12-04)
+++++++++++++++++++
+
+* Exports registered users to CSV from admin panel
+* Create newsletters from admin panel
+* Fixed installation from pip
