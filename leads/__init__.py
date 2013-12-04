@@ -1,6 +1,10 @@
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
-from django.conf import settings
+try:
+    from django.conf import settings
+except ImportError:  # pragma: no cover
+    # Django might not be installed yet (but it will..)
+    settings = None
 
 
 def get_register_model():
