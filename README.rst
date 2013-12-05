@@ -82,6 +82,8 @@ Features
 * Registers user's name and email into database
 * Customizable and extendable models and forms
 * Admin interface
+* Export registered users to CSV
+* Send newsletters to your users
 
 
 .. image:: https://d2weczhvl823v0.cloudfront.net/dnmellen/django-leads/trend.png
