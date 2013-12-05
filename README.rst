@@ -36,7 +36,7 @@ Or get the bleeding-edge version:
 
 .. code-block :: bash
 
-    $ pip install https://github.com/dnmellen/django-leads/master
+    $ pip install https://github.com/dnmellen/django-leads/archive/master.zip
 
 Settings
 ++++++++++++++++++++++
