@@ -17,6 +17,8 @@ django-leads
 
 An easy, functional and customizable lead page for your next big thing, ready to use in your django project.
 
+.. image:: https://raw.github.com/dnmellen/django-leads/master/assets/leads_pic_1.png
+
 Documentation
 -------------
 
