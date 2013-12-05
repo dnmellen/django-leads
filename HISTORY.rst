@@ -19,3 +19,8 @@ History
 * Exports registered users to CSV from admin panel
 * Create newsletters from admin panel
 * Fixed installation from pip
+
+0.1.3 (2013-12-04)
+++++++++++++++++++
+
+* Bugfixed circular imports when setting custom Forms

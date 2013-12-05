@@ -2,7 +2,7 @@ import csv
 from django.core.mail import EmailMultiAlternatives, get_connection
 from django.contrib import admin
 from django.http import HttpResponse
-from . import get_register_model, get_register_model_admin
+from .utils import get_register_model, get_register_model_admin
 from .models import Newsletter
 
 
@@ -37,7 +37,7 @@ admin.site.register(get_register_model(), get_register_model_admin())
 class NewsletterAdmin(admin.ModelAdmin):
     fields = ['subject', 'from_name', 'from_address', 'html_file']
     readonly_fields = ('created_on', 'modified_on')
-    list_display = ('created_on',)
+    list_display = ('subject', 'created_on',)
     list_filter = ['created_on']
     search_fields = ['subject']
     actions = ['send']

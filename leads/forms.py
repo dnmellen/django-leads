@@ -4,7 +4,7 @@ from crispy_forms.layout import Submit
 from django.utils.translation import ugettext_lazy as _
 
 import floppyforms as forms
-from . import get_register_model, get_register_form_fields
+from .utils import get_register_model, get_register_form_fields
 
 
 class RegisterForm(forms.ModelForm):

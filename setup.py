@@ -15,7 +15,18 @@ def parse_requirements(requirements):
     with open(requirements) as f:
         return [l.strip('\n') for l in f if l.strip('\n') and not l.startswith('#')]
 
-install_reqs = parse_requirements(os.path.abspath(os.path.join(os.path.dirname(__file__), 'requirements.txt')))
+if sys.version_info > (2, 6):
+    requirements_file = 'requirements.txt'
+else:
+    requirements_file = 'requirements-py26.txt'
+
+install_reqs = parse_requirements(os.path.abspath(os.path.join(os.path.dirname(__file__), requirements_file)))
+
+# Compatibility with python 2.6
+try:
+    import importlib
+except ImportError:
+    install_reqs.append('importlib')
 
 version = leads.__version__
 

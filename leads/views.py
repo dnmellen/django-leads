@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.core.urlresolvers import reverse
 from django.views.generic import CreateView, TemplateView
-from . import get_register_model, get_register_form_class
+from .utils import get_register_model, get_register_form_class
 
 
 class IndexView(CreateView):
