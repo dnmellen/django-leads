@@ -8,8 +8,8 @@ python:
   - "2.6"
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: 
-    - pip install -r requirements-test.txt
+install:
+    - if [[ $TRAVIS_PYTHON_VERSION == '2.6' ]]; then pip install -r requirements-test-py26.txt; else pip install -r requirements-test.txt; fi
     - pip install coveralls
 
 # command to run tests, e.g. python setup.py test
