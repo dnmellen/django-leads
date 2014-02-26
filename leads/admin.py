@@ -51,7 +51,7 @@ class NewsletterAdmin(admin.ModelAdmin):
 
         for obj in queryset:
             messages = []
-            body = obj.html_file.read()
+            body = obj.html_file.read().decode('utf-8')
             msg = EmailMultiAlternatives(subject=obj.subject,
                                          body='',
                                          from_email=u"{from_name} <{from_email}>".format(from_name=obj.from_name,

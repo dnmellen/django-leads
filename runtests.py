@@ -16,6 +16,7 @@ try:
         INSTALLED_APPS=[
             "django.contrib.auth",
             "django.contrib.contenttypes",
+            "django.contrib.staticfiles",
             "django.contrib.sites",
             "floppyforms",
             "crispy_forms",
@@ -24,6 +25,7 @@ try:
         CRISPY_TEMPLATE_PACK='bootstrap3',
         SITE_ID=1,
         NOSE_ARGS=['-s'],
+        STATIC_URL='/static/',
     )
 
     from django_nose import NoseTestSuiteRunner
