@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit
+from crispy_forms.layout import Submit, Layout, Field, Fieldset, ButtonHolder
 from django.utils.translation import ugettext_lazy as _
 
 import floppyforms as forms
@@ -15,7 +15,16 @@ class RegisterForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         self.helper = FormHelper()
-        self.helper.add_input(Submit('submit', _('Submit')))
+        self.helper.layout = Layout(
+            Fieldset(
+                _('Register here!'),
+                Field('name'),
+                Field('email'),
+                ButtonHolder(
+                    Submit('submit', _('Submit'), css_class="btn btn-danger")
+                ),
+            ),
+        )
         super(RegisterForm, self).__init__(*args, **kwargs)
 
     class Meta:

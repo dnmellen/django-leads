@@ -24,3 +24,8 @@ History
 ++++++++++++++++++
 
 * Bugfixed circular imports when setting custom Forms
+
+0.1.4 (2014-02-26)
+++++++++++++++++++
+
+* Changed default bootstrap theme

@@ -3,30 +3,32 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="col-md-6 column">
-    <div class="jumbotron">
-        <h1>
+
+<div class="inner cover">
+    <div class="col-md-6 column">
+        <h1 class="cover-heading">
             Hello, world!
         </h1>
-        <p>
+        <p class="lead">
             This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
         </p>
         <p>
-            <a class="btn btn-primary btn-large" href="#">Learn more</a>
+            <a class="btn btn-default btn-large" href="#">Learn more</a>
         </p>
     </div>
+    <div class="col-md-6 column">
+        <h2>
+            Heading
+        </h2>
+        <p>
+            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+        </p>
+        <p>
+            <a class="btn" href="#">View details »</a>
+        </p>
+     
+        {% crispy form %}
+    </div>
 </div>
-<div class="col-md-6 column">
-    <h2>
-        Heading
-    </h2>
-    <p>
-        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-    </p>
-    <p>
-        <a class="btn" href="#">View details »</a>
-    </p>
- 
-    {% crispy form %}
-</div>
+
 {% endblock %}
